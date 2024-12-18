@@ -1,3 +1,4 @@
+
 import React, {
   useState,
   useImperativeHandle,
@@ -46,7 +47,7 @@ export enum Preset {
 
 const PageInterpolators = {
   [Preset.SLIDE]: pageInterpolatorSlide,
-  [Preset.CUBE]: pageInterpolatorCube,
+  [Preset.CUBE]: (typeof window !== 'undefined') ? pageInterpolatorCube : defaultPageInterpolator,
   [Preset.STACK]: pageInterpolatorStack,
   [Preset.TURN_IN]: pageInterpolatorTurnIn,
 };
